@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nunzia e Mauro</title>
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" value="Webpack basic starter project">
+    <meta name="Description" content="" />
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Webpack basic starter project" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://www.nunziaemauro.info/" />
+    <meta property="og:image" content="https://i.snag.gy/i3eMBc.jpg" />
+    <meta property="og:description" content="A simple webpack starter project for your basic web development needs." />
+    <!-- Mobile header color for Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#ff4970">
+    <!-- Mobile header color Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="{{mobileHeaderColor}}">
+    <!-- Mobile header color for iOS Safari (supports black, black-translucent or default) -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <!--  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet"> -->
+</head>
+
+
+<body data-spy="scroll" data-target="#my-navbar">
+
+
+    <div class="container">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+            <a class="navbar-brand" href="#">Nunzia & Mauro</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#foto">Foto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#map">Mappa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contatti</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#trip">In Viaggio con Noi</a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+    </div>
+
+    <div class="container-fluid full-panel" id="home">
+
+        <div id="copertina" class="trasparent">
+            Nunzia e Mauro
+        </div>
+
+    </div>
+
+    <div class="my-container">
+
+        <div class="row">
+            <a name="map"></a>
+            <div class="col-md-12 full-panel intro">
+                <div class="in-panel" id="intro">
+                    <h2>02. Mappa</h2>
+                    <%= require('html-loader!./src/partials/map.html') %>
+                </div>
+            </div>
+
+            <a name="map"></a>
+            <div class="col-md-12 full-panel foto">
+                <div class="in-panel" id="foto">
+                    <h2 class="trasparent">03. Foto</h2>
+                    <%= require('html-loader!./src/partials/foto.html') %>
+                </div>
+            </div>
+
+            <a name="contact"></a>
+            <div class="col-md-12 full-panel contact">
+                <div class="in-panel" id="contact">
+                    <h2>04. Contatti</h2>
+                    <p>
+                        <strong>Industries that do business in the creative arts and entertainment are an important and sizable sector
+                            of the economy of Berlin.</strong>
+                        <br>
+                        <br> The creative arts sector comprises music, film, advertising, architecture, art, design, fashion,
+                        performing arts, publishing, R&D, software, TV, radio, and video games.
+                        <br>
+                        <br> Around 22,600 creative enterprises, predominantly SMEs, generated over 18,6 billion Euro in total
+                        revenue. Berlin's creative industries have contributed an estimated 20% of Berlin's gross domestic
+                        product in 2005.
+                        <br/>
+                        <cite>
+                            <a href="http://en.wikipedia.org/wiki/Berlin">Wikipedia</a>
+                        </cite>
+                    </p>
+                </div>
+            </div>
+
+            <a name="trip"></a>
+            <div class="col-md-12 full-panel trip">
+                <div class="in-panel" id="trip">
+                    <h2 class="trasparent"> 05. Viaggio</h2>
+                    <p class="trasparent">
+                        Resta Connesso per ricevere aggiornamenti sul nostro viaggio in Giappone
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
