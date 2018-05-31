@@ -1,8 +1,8 @@
-$img1: '../assets/img/1.jpg';
-$img2: '../assets/img/2.jpg';
-$img3: '../assets/img/3.jpg';
+
 $imgTavolo: '../assets/img/tavolo2.jpg';
 $imgJapan: '../assets/img/japan.jpg';
+$imgTree: '../assets/img/tree.jpg';
+
 @mixin prefix($property, $value, $prefixes: ()) {
     @each $prefix in $prefixes {
         #{'-' + $prefix + '-' + $property}: $value;
@@ -17,23 +17,6 @@ html {
     font-family: sans-serif;
 }
 
-.navbar-fixed-top {
-    width: 970px;
-    margin: 30px auto
-}
-
-.navbar {
-    text-transform: uppercase;
-    background-color: #00ebbe;
-    background-image: none;
-    border: none;
-}
-
-.navbar-inverse .navbar-brand,
-.navbar-inverse .navbar-nav>li>a {
-    color: #000;
-    font-weight: 300
-}
 
 .my-container {
     width: 100%;
@@ -44,7 +27,7 @@ html {
 }
 
 .in-panel {
-    width: 970px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -96,7 +79,8 @@ cite a {
 }
 
 .trasparent{
-    background-color: rgba(255, 255, 255, 0.3);
+    text-shadow: 5px 0px 10px rgba(0, 0, 0, 1);
+    background-color: rgba(255, 255, 255, 0.3) !important;
     @include prefix( backdrop-filter, blur(10px), webkit ms);
 }
 
@@ -117,7 +101,7 @@ cite a {
 
 
 .foto {
-    background: url(../assets/img/1.jpg) no-repeat 50% 0 fixed;
+    background: url($imgTree) no-repeat 50% 0 fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
