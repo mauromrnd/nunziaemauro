@@ -7,7 +7,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const buildPath = path.resolve(__dirname, 'dist');
-require("html-loader?interpolate!./file.html");
+//require("html-loader?interpolate!./file.html");
 
 module.exports = {
     devtool: 'source-map',
@@ -64,7 +64,7 @@ module.exports = {
                     ],
                     fallback: 'style-loader'
                 }),
-            },
+            }, { test: /\.(woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' },
             {
                 // Load all images as base64 encoding if they are smaller than 8192 bytes
                 test: /\.(png|jpg|gif)$/,
@@ -84,7 +84,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './index.html',
             // Inject the js bundle at the end of the body of the given template
-            inject: 'body',
+            inject: true
         }),
         new CleanWebpackPlugin(buildPath),
         new FaviconsWebpackPlugin({

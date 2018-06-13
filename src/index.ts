@@ -7,5 +7,19 @@ import './styles/index.scss';
 import 'jquery/dist/jquery.js';
 import 'bootstrap/js/src/collapse.js';
 
+import * as ScrollReveal from 'scrollreveal/dist/scrollreveal.js';
+
 //import './ts/map.ts'
 import './ts/foto.ts'
+
+import smoothscroll from 'smoothscroll-polyfill';
+
+// kick off the polyfill!
+smoothscroll.polyfill();
+ 
+let sr = ScrollReveal({ reset: true });
+(<any> window ).sr = sr;
+
+// Customizing a reveal set
+sr.reveal('.trasparent', { duration: 1000 });
+

@@ -7,6 +7,7 @@ module.exports = {
     entry: './src/index.ts',
     devServer: {
         port: 8080,
+        open: true,
         contentBase: path.join(__dirname, "dist")
     },
     module: {
@@ -36,16 +37,13 @@ module.exports = {
                     {
                         // compiles Sass to CSS
                         loader: "sass-loader",
-                        options: {
-                            outputStyle: 'expanded',
-                            sourceMap: true,
-                            sourceMapContents: true
-                        }
+                      
                     }
                     // Please note we are not running postcss here
                 ]
             }
             ,
+            { test: /\.(woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' },
             {
                 // Load all images as base64 encoding if they are smaller than 8192 bytes
                 test: /\.(png|jpg|gif)$/,
