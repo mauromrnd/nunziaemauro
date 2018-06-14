@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Nunzia e Mauro</title>
     <!-- Twitter Card data -->
-    <meta name="twitter:card" value="Webpack basic starter project">
+    <meta name="twitter:card" value="Nunzia e Mauro Sposi">
     <meta name="Description" content="" />
     <!-- Open Graph data -->
-    <meta property="og:title" content="Webpack basic starter project" />
+    <meta property="og:title" content="Nunzia e Mauro Sposi" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="http://www.nunziaemauro.info/" />
-    <meta property="og:image" content="https://i.snag.gy/i3eMBc.jpg" />
-    <meta property="og:description" content="A simple webpack starter project for your basic web development needs." />
+    <meta property="og:image" content="http://www.nunziaemauro.info/nm.jpg" />
+    <meta property="og:description" content="Nunzia e Mauro Sposi il 20 Settembre 2018" />
     <!-- Mobile header color for Chrome, Firefox OS and Opera -->
     <meta name="theme-color" content="#ff4970">
     <!-- Mobile header color Windows Phone -->
@@ -23,67 +23,31 @@
     <!--  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet"> -->
 </head>
 
-
-<body data-spy="scroll" data-target="#my-navbar">
-
-
-    <div class="container">
-        <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light trasparent">
-            <a class="navbar-brand" href="#">Nunzia & Mauro</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#foto">Foto</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#map">Mappa</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contatti</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#trip">In Viaggio con Noi</a>
-                    </li>
-                </ul>
-
-            </div>
-        </nav>
-    </div>
+<body >
 
     <div class=" full-panel" id="home">
-
         <div id="copertina" class="trasparent">
             <p>Nunzi</p> 
             <p>e</p>
             <p>Maur</p> 
 
-            <p class="sub_hand">SPOSI</p>
-            <p class="sub_mellony">20 settembre 2018</p>
+            <p class="sub handmade">SPOSI</p>
+            <p class="sub mellony">20 settembre 2018</p>
         </div>
 
+        <div class="scroll-down ">Continua </div>
     </div>
 
+    <%= require('html-loader!./src/partials/nav.html') %>
+
     <div class="my-container">
-
         <div class="row">
-
             <div class="col-md-12 full-panel intro">
                 <a name="map"></a>
                 <div class="in-panel">
-
                     <%= require('html-loader!./src/partials/map.html') %>
                 </div>
             </div>
-
 
             <div class="col-md-12 full-panel foto">
                 <a name="foto"></a>
@@ -92,7 +56,6 @@
                     <%= require('html-loader!./src/partials/foto.html') %>
                 </div>
             </div>
-
 
             <div class="col-md-12 full-panel contact">
                 <a name="contact"></a>
@@ -115,7 +78,6 @@
                     </p>
                 </div>
             </div>
-
 
             <div class="col-md-12 full-panel trip">
                 <a name="trip"></a>

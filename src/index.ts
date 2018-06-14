@@ -11,8 +11,9 @@ import * as ScrollReveal from 'scrollreveal/dist/scrollreveal.js';
 
 //import './ts/map.ts'
 import './ts/foto.ts'
+import './ts/navbar.ts'
 
-import smoothscroll from 'smoothscroll-polyfill';
+import * as smoothscroll from 'smoothscroll-polyfill';
 
 // kick off the polyfill!
 smoothscroll.polyfill();
@@ -22,4 +23,5 @@ let sr = ScrollReveal({ reset: true });
 
 // Customizing a reveal set
 sr.reveal('.trasparent', { duration: 1000 });
+
 

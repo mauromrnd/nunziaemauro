@@ -60,7 +60,8 @@ module.exports = {
             }
         ],
     },
-    plugins: [
+    plugins: [        
+        require('autoprefixer'),
         new HtmlWebpackPlugin({
             template: './index.html',
             inject: true

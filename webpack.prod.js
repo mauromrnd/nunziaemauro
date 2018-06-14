@@ -18,17 +18,8 @@ module.exports = {
     },
     module: {
         rules: [
-            {
-                test: /\.html$/,
-                use: [{
-                    loader: 'html-loader',
-                    options: {
-                        minimize: true,
-                        removeComments: true,
-                        collapseWhitespace: true
-                    }
-                }]
-            },
+
+            
             {
                 test: /\.tsx?$/,
                 loader: 'ts-loader',
@@ -49,7 +40,7 @@ module.exports = {
                             // Runs compiled CSS through postcss for vendor prefixing
                             loader: 'postcss-loader',
                             options: {
-                                sourceMap: true
+                                sourceMap: true,
                             }
                         },
                         {
@@ -81,6 +72,7 @@ module.exports = {
         ]
     },
     plugins: [
+        require('autoprefixer'),
         new HtmlWebpackPlugin({
             template: './index.html',
             // Inject the js bundle at the end of the body of the given template

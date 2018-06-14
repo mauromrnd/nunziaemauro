@@ -11,13 +11,67 @@
 $imgTavolo: '../assets/img/tavolo2.jpg';
 $imgJapan: '../assets/img/japan.jpg';
 $imgTree: '../assets/img/tree.jpg';
+
+$imgFogliaBigSx: '../assets/img/foglie_grandi_sx.png';
+$imgFogliaBigDx: '../assets/img/foglie_grandi_dx.png';
+$imgFogliaSmallSx: '../assets/img/foglia_piccola_sx.png';
+$imgFogliaSmallDx: '../assets/img/foglia_piccola_dx.png';
+$imgFoglia: '../assets/img/foglia.png';
+
+$imgSposi: '../assets/img/sposi.png';
+$imgTestimoni: '../assets/img/testimoni.png';
+
+
+
 body {
     scroll-behavior: smooth;
+}
+
+@media (min-width: 992px) {
+    .show-phone {
+        display: none;
+    }
+}
+
+@media (max-width: 992px) {
+    .show-phone {}
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+}
+
+.full-width {
+    width: 100%;
 }
 
 .full-panel {
     height: 100vh;
     width: 100%;
+}
+
+.navbar-nav {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav.navbar {
+    background-color: #F5F5F2 !important;
+    text-align: center;
+    z-index: 1000;
+    text-align: center;
+    .nav-item{
+        margin-left:15px;
+        margin-right:15px;
+    }
+    .handmade {
+        font-size: 30px;
+    }
+    .mellony{
+        font-size: 40px;
+    }
 }
 
 #home {
@@ -37,20 +91,33 @@ body {
     color: #000;
     width: 550px;
     font-size: 150px;
-    margin: 300px auto;
+    position: absolute;
+    margin: 0 auto;
+    top: 25%;
+    left: 0;
+    right: 0;
     text-overflow: unset;
     overflow: visible;
 }
 
-.sub_hand {
-    font-family: 'TheHandExtrablack';
-    font-size: 50px;
+.scroll-down {
+    position: absolute;
+    bottom: 0px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
     text-align: center;
 }
 
-.sub_mellony {
+.mellony {
     font-family: 'mellony dry brush';
+}
+
+.handmade {
+    font-family: 'TheHandExtrablack';
+}
+
+.sub {
     font-size: 50px;
     text-align: center;
 }
-
