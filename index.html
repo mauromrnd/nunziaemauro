@@ -23,73 +23,22 @@
     <!--  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet"> -->
 </head>
 
-<body >
+<body>
 
-    <div class=" full-panel" id="home">
-        <div id="copertina" class="trasparent">
-            <p>Nunzi</p> 
-            <p>e</p>
-            <p>Maur</p> 
-
-            <p class="sub handmade">SPOSI</p>
-            <p class="sub mellony">20 settembre 2018</p>
-        </div>
-
-        <div class="scroll-down ">Continua </div>
-    </div>
+    <%= require('html-loader!./src/partials/copertina.html') %>
 
     <%= require('html-loader!./src/partials/nav.html') %>
 
-    <div class="my-container">
-        <div class="row">
-            <div class="col-md-12 full-panel intro">
-                <a name="map"></a>
-                <div class="in-panel">
-                    <%= require('html-loader!./src/partials/map.html') %>
-                </div>
-            </div>
+    <%= require('html-loader!./src/partials/sposi.html') %>
 
-            <div class="col-md-12 full-panel foto">
-                <a name="foto"></a>
-                <div class="in-panel">
-                    <h2 class="trasparent">03. Foto</h2>
-                    <%= require('html-loader!./src/partials/foto.html') %>
-                </div>
-            </div>
+    <%= require('html-loader!./src/partials/testimoni.html') %>
 
-            <div class="col-md-12 full-panel contact">
-                <a name="contact"></a>
-                <div class="in-panel">
-                    <h2>04. Contatti</h2>
-                    <p>
-                        <strong>Industries that do business in the creative arts and entertainment are an important and sizable sector
-                            of the economy of Berlin.</strong>
-                        <br>
-                        <br> The creative arts sector comprises music, film, advertising, architecture, art, design, fashion,
-                        performing arts, publishing, R&D, software, TV, radio, and video games.
-                        <br>
-                        <br> Around 22,600 creative enterprises, predominantly SMEs, generated over 18,6 billion Euro in total
-                        revenue. Berlin's creative industries have contributed an estimated 20% of Berlin's gross domestic
-                        product in 2005.
-                        <br/>
-                        <cite>
-                            <a href="http://en.wikipedia.org/wiki/Berlin">Wikipedia</a>
-                        </cite>
-                    </p>
-                </div>
-            </div>
+    <%= require('html-loader!./src/partials/map.html') %>
 
-            <div class="col-md-12 full-panel trip">
-                <a name="trip"></a>
-                <div class="in-panel">
-                    <h2 class="trasparent"> 05. Viaggio</h2>
-                    <p class="trasparent">
-                        Resta Connesso per ricevere aggiornamenti sul nostro viaggio in Giappone
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
+    <%= require('html-loader!./src/partials/programma.html') %>
+    <%= require('html-loader!./src/partials/foto.html') %>
+    <%= require('html-loader!./src/partials/end.html') %>
+
 </body>
 
 </html>

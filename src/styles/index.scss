@@ -8,21 +8,16 @@
     src: url("../assets/fonts/TheHandExtrablack.woff") format("woff"), url("../assets/fonts/TheHandExtrablack.ttf") format("truetype")
 }
 
-$imgTavolo: '../assets/img/tavolo2.jpg';
-$imgJapan: '../assets/img/japan.jpg';
-$imgTree: '../assets/img/tree.jpg';
-
+$mainColor: #417505;
+$navColor : #F5F5F2;
 $imgFogliaBigSx: '../assets/img/foglie_grandi_sx.png';
 $imgFogliaBigDx: '../assets/img/foglie_grandi_dx.png';
 $imgFogliaSmallSx: '../assets/img/foglia_piccola_sx.png';
 $imgFogliaSmallDx: '../assets/img/foglia_piccola_dx.png';
 $imgFoglia: '../assets/img/foglia.png';
-
 $imgSposi: '../assets/img/sposi.png';
 $imgTestimoni: '../assets/img/testimoni.png';
-
-
-
+$imgSposiBG: '../assets/img/copertina_bg.png';
 body {
     scroll-behavior: smooth;
 }
@@ -58,18 +53,18 @@ body {
 }
 
 nav.navbar {
-    background-color: #F5F5F2 !important;
+    background-color: $navColor !important;
     text-align: center;
     z-index: 1000;
     text-align: center;
-    .nav-item{
-        margin-left:15px;
-        margin-right:15px;
+    .nav-item {
+        margin-left: 15px;
+        margin-right: 15px;
     }
     .handmade {
         font-size: 30px;
     }
-    .mellony{
+    .mellony {
         font-size: 40px;
     }
 }
@@ -87,17 +82,26 @@ nav.navbar {
     line-height: 70px;
     text-align: end;
     font-family: 'mellony dry brush';
-    padding: 15px 30px;
+    padding: 150px 150px;
     color: #000;
-    width: 550px;
     font-size: 150px;
-    position: absolute;
-    margin: 0 auto;
-    top: 25%;
-    left: 0;
-    right: 0;
     text-overflow: unset;
     overflow: visible;
+    /* if we can clip, do it */
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    /* what will show through the text
+      ~ or ~
+     what will be the background of that element */
+    background-image: url($imgSposiBG);
+    background-position: -100px -400px;
+    background-size: 400%;
+    background-attachment: fixed;
+    /* fallback text color
+      ~ or ~
+     the actual color of text, so it better work on the background */
+    color: $mainColor;
 }
 
 .scroll-down {
@@ -120,4 +124,9 @@ nav.navbar {
 .sub {
     font-size: 50px;
     text-align: center;
+}
+
+.map {
+    width: 100%;
+    height: 50vh;
 }

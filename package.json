@@ -21,12 +21,14 @@
     },
     "homepage": "",
     "dependencies": {
+        "@types/openlayers": "^4.6.9",
+        "@types/scrollreveal": "0.0.3",
         "bootstrap": "^4.1.1",
         "friendly-errors-webpack-plugin": "^1.7.0",
         "jquery": "^3.3.1",
         "normalize.css": "^8.0.0",
+        "openlayers": "^4.6.5",
         "popper.js": "^1.14.3",
-        "@types/scrollreveal": "0.0.3",
         "scrollreveal": "^3.4.0",
         "smoothscroll-polyfill": "^0.4.3"
     },

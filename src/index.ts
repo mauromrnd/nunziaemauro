@@ -9,7 +9,7 @@ import 'bootstrap/js/src/collapse.js';
 
 import * as ScrollReveal from 'scrollreveal/dist/scrollreveal.js';
 
-//import './ts/map.ts'
+import './ts/map.ts'
 import './ts/foto.ts'
 import './ts/navbar.ts'
 
@@ -22,6 +22,7 @@ let sr = ScrollReveal({ reset: true });
 (<any> window ).sr = sr;
 
 // Customizing a reveal set
+sr.reveal('#copertina', { duration: 2000 });
 sr.reveal('.trasparent', { duration: 1000 });
 
 
