@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "webpack-dev-server --config webpack.dev.js --mode development",
+        "start": "webpack-dev-server --config webpack.dev.js --mode development ",
         "build": "webpack --config webpack.prod.js --mode production",
         "preview": "npm run build && http-server dist"
     },
@@ -21,10 +21,11 @@
     },
     "homepage": "",
     "dependencies": {
-        "jquery": "^3.3.1",
         "bootstrap": "^4.1.1",
-        "popper.js": "^1.14.3",
-        "normalize.css": "^8.0.0"
+        "friendly-errors-webpack-plugin": "^1.7.0",
+        "jquery": "^3.3.1",
+        "normalize.css": "^8.0.0",
+        "popper.js": "^1.14.3"
     },
     "devDependencies": {
         "clean-webpack-plugin": "^0.1.19",
@@ -39,14 +40,16 @@
         "node-sass": "^4.9.0",
         "optimize-css-assets-webpack-plugin": "^4.0.2",
         "postcss-loader": "^2.1.5",
-        "sass-loader": "^7.0.1",
+        "purify-css": "^1.2.5",
+        "purifycss-webpack": "^0.7.0",
+        "sass-loader": "^7.0.3",
         "source-map-loader": "^0.2.3",
         "style-loader": "^0.21.0",
-        "ts-loader": "^4.3.0",
-        "typescript": "^2.8.4",
+        "ts-loader": "^4.4.1",
+        "typescript": "^2.9.1",
         "url-loader": "^1.0.1",
-        "webpack": "^4.10.2",
-        "webpack-cli": "^2.1.4",
+        "webpack": "^4.12.0",
+        "webpack-cli": "^3.0.4",
         "webpack-dev-server": "^3.1.4"
     }
 }

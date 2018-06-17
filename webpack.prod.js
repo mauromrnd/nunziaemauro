@@ -1,13 +1,16 @@
 const path = require('path');
+const glob = require('glob'); 
 
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin'); //installed via npm
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const PurifyCSSPlugin = require('purifycss-webpack');
+
 
 const buildPath = path.resolve(__dirname, 'dist');
-require("html-loader?interpolate!./file.html");
+
 
 module.exports = {
     devtool: 'source-map',
@@ -81,6 +84,10 @@ module.exports = {
         ]
     },
     plugins: [
+        new PurifyCSSPlugin({
+            // Give paths to parse for rules. These should be absolute!
+            paths: glob.sync(path.join(__dirname, 'src/*.html')),
+          }),
         new HtmlWebpackPlugin({
             template: './index.html',
             // Inject the js bundle at the end of the body of the given template

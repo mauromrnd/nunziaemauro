@@ -1,13 +1,16 @@
 const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
 module.exports = {
     devtool: 'eval-cheap-module-source-map',
     entry: './src/index.ts',
     devServer: {
         port: 8080,
-        contentBase: path.join(__dirname, "dist")
+        contentBase: path.join(__dirname, "dist"),
+        open: true,
+        quiet : true
     },
     module: {
         rules: [
@@ -63,6 +66,7 @@ module.exports = {
         ],
     },
     plugins: [
+        new FriendlyErrorsWebpackPlugin(),
         new HtmlWebpackPlugin({
             template: './index.html',
             inject: true
