@@ -1,5 +1,5 @@
 const path = require('path');
-const glob = require('glob'); 
+const glob = require('glob');
 
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin'); //installed via npm
@@ -11,6 +11,7 @@ const PurifyCSSPlugin = require('purifycss-webpack');
 
 const buildPath = path.resolve(__dirname, 'dist');
 
+//require("html-loader?interpolate!./file.html");
 
 module.exports = {
     devtool: 'source-map',
@@ -21,17 +22,8 @@ module.exports = {
     },
     module: {
         rules: [
-            {
-                test: /\.html$/,
-                use: [{
-                    loader: 'html-loader',
-                    options: {
-                        minimize: true,
-                        removeComments: true,
-                        collapseWhitespace: true
-                    }
-                }]
-            },
+
+
             {
                 test: /\.tsx?$/,
                 loader: 'ts-loader',
@@ -52,7 +44,7 @@ module.exports = {
                             // Runs compiled CSS through postcss for vendor prefixing
                             loader: 'postcss-loader',
                             options: {
-                                sourceMap: true
+                                sourceMap: true,
                             }
                         },
                         {
@@ -67,7 +59,7 @@ module.exports = {
                     ],
                     fallback: 'style-loader'
                 }),
-            },
+            }, { test: /\.(woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' },
             {
                 // Load all images as base64 encoding if they are smaller than 8192 bytes
                 test: /\.(png|jpg|gif)$/,
@@ -87,11 +79,12 @@ module.exports = {
         new PurifyCSSPlugin({
             // Give paths to parse for rules. These should be absolute!
             paths: glob.sync(path.join(__dirname, 'src/*.html')),
-          }),
+        }),
+        require('autoprefixer'),
         new HtmlWebpackPlugin({
             template: './index.html',
             // Inject the js bundle at the end of the body of the given template
-            inject: 'body',
+            inject: true
         }),
         new CleanWebpackPlugin(buildPath),
         new FaviconsWebpackPlugin({

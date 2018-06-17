@@ -39,16 +39,13 @@ module.exports = {
                     {
                         // compiles Sass to CSS
                         loader: "sass-loader",
-                        options: {
-                            outputStyle: 'expanded',
-                            sourceMap: true,
-                            sourceMapContents: true
-                        }
+                      
                     }
                     // Please note we are not running postcss here
                 ]
             }
             ,
+            { test: /\.(woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' },
             {
                 // Load all images as base64 encoding if they are smaller than 8192 bytes
                 test: /\.(png|jpg|gif)$/,
@@ -66,7 +63,8 @@ module.exports = {
         ],
     },
     plugins: [
-        new FriendlyErrorsWebpackPlugin(),
+        new FriendlyErrorsWebpackPlugin(),   
+        require('autoprefixer'),
         new HtmlWebpackPlugin({
             template: './index.html',
             inject: true
