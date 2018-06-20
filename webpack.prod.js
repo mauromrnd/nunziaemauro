@@ -21,59 +21,50 @@ module.exports = {
         path: buildPath
     },
     module: {
-        rules: [
-
-
-            {
-                test: /\.tsx?$/,
-                loader: 'ts-loader',
-                exclude: /node_modules/,
-            },
-            {
-                test: /\.(scss|css|sass)$/,
-                use: ExtractTextPlugin.extract({
-                    use: [
-                        {
-                            // translates CSS into CommonJS
-                            loader: 'css-loader',
-                            options: {
-                                sourceMap: true
-                            }
-                        },
-                        {
-                            // Runs compiled CSS through postcss for vendor prefixing
-                            loader: 'postcss-loader',
-                            options: {
-                                sourceMap: true,
-                            }
-                        },
-                        {
-                            // compiles Sass to CSS
-                            loader: 'sass-loader',
-                            options: {
-                                outputStyle: 'expanded',
-                                sourceMap: true,
-                                sourceMapContents: true
-                            }
-                        }
-                    ],
-                    fallback: 'style-loader'
-                }),
-            }, { test: /\.(woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' },
-            {
-                // Load all images as base64 encoding if they are smaller than 8192 bytes
-                test: /\.(png|jpg|gif)$/,
-                use: [
-                    {
-                        loader: 'url-loader',
-                        options: {
-                            name: '[name].[hash:20].[ext]',
-                            limit: 8192
-                        }
+        rules: [{
+            test: /\.tsx?$/,
+            loader: 'ts-loader',
+            exclude: /node_modules/,
+        }, {
+            test: /\.(scss|css|sass)$/,
+            use: ExtractTextPlugin.extract({
+                use: [{
+                    // translates CSS into CommonJS
+                    loader: 'css-loader',
+                    options: {
+                        sourceMap: true
                     }
-                ]
-            }
-        ]
+                }, {
+                    // Runs compiled CSS through postcss for vendor prefixing
+                    loader: 'postcss-loader',
+                    options: {
+                        sourceMap: true,
+                    }
+                }, {
+                    // compiles Sass to CSS
+                    loader: 'sass-loader',
+                    options: {
+                        outputStyle: 'expanded',
+                        sourceMap: true,
+                        sourceMapContents: true
+                    }
+                }],
+                fallback: 'style-loader'
+            }),
+        }, {
+            test: /\.(woff|woff2|eot|ttf|svg)$/,
+            loader: 'url-loader?limit=100000'
+        }, {
+            // Load all images as base64 encoding if they are smaller than 8192 bytes
+            test: /\.(png|jpg|gif)$/,
+            use: [{
+                loader: 'url-loader',
+                options: {
+                    name: '[name].[hash:20].[ext]',
+                    limit: 8192
+                }
+            }]
+        }]
     },
     plugins: [
         new CleanWebpackPlugin(buildPath),
@@ -82,7 +73,7 @@ module.exports = {
             template: './src/index.html',
             // Inject the js bundle at the end of the body of the given template
             inject: true,
-            minify : true
+            minify: true
         }),
         new FaviconsWebpackPlugin({
             // Your source logo
@@ -101,13 +92,13 @@ module.exports = {
 
             // which icons should be generated (see https://github.com/haydenbleasel/favicons#usage)
             icons: {
-                android: true,
-                appleIcon: true,
-                appleStartup: true,
+                android: false,
+                appleIcon: false,
+                appleStartup: false,
                 coast: false,
                 favicons: true,
-                firefox: true,
-                opengraph: false,
+                firefox: false,
+                opengraph: true,
                 twitter: false,
                 yandex: false,
                 windows: false
