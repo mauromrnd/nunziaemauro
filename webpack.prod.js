@@ -76,17 +76,14 @@ module.exports = {
         ]
     },
     plugins: [
-        new PurifyCSSPlugin({
-            // Give paths to parse for rules. These should be absolute!
-            paths: glob.sync(path.join(__dirname, 'src/*.html')),
-        }),
+        new CleanWebpackPlugin(buildPath),
         require('autoprefixer'),
         new HtmlWebpackPlugin({
-            template: './index.html',
+            template: './src/index.html',
             // Inject the js bundle at the end of the body of the given template
-            inject: true
+            inject: true,
+            minify : true
         }),
-        new CleanWebpackPlugin(buildPath),
         new FaviconsWebpackPlugin({
             // Your source logo
             logo: './src/assets/icon.png',
@@ -130,6 +127,10 @@ module.exports = {
                 }
             },
             canPrint: true
+        }),
+        new PurifyCSSPlugin({
+            // Give paths to parse for rules. These should be absolute!
+            paths: glob.sync(path.join(__dirname, 'src/*.html')),
         })
     ]
 };

@@ -66,7 +66,7 @@ module.exports = {
         new FriendlyErrorsWebpackPlugin(),   
         require('autoprefixer'),
         new HtmlWebpackPlugin({
-            template: './index.html',
+            template: './src/index.html',
             inject: true
         })
     ]
