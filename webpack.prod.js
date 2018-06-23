@@ -14,7 +14,6 @@ const buildPath = path.resolve(__dirname, 'dist');
 //require("html-loader?interpolate!./file.html");
 
 module.exports = {
-    devtool: 'source-map',
     entry: './src/index.ts',
     output: {
         filename: '[name].[hash:20].js',
@@ -32,21 +31,21 @@ module.exports = {
                     // translates CSS into CommonJS
                     loader: 'css-loader',
                     options: {
-                        sourceMap: true
+                        sourceMap: false
                     }
                 }, {
                     // Runs compiled CSS through postcss for vendor prefixing
                     loader: 'postcss-loader',
                     options: {
-                        sourceMap: true,
+                        sourceMap: false,
                     }
                 }, {
                     // compiles Sass to CSS
                     loader: 'sass-loader',
                     options: {
                         outputStyle: 'expanded',
-                        sourceMap: true,
-                        sourceMapContents: true
+                        sourceMap: false,
+                        sourceMapContents: false
                     }
                 }],
                 fallback: 'style-loader'
@@ -110,18 +109,12 @@ module.exports = {
         new OptimizeCssAssetsPlugin({
             cssProcessor: require('cssnano'),
             cssProcessorOptions: {
-                map: {
-                    inline: false,
-                },
+                
                 discardComments: {
                     removeAll: true
                 }
             },
             canPrint: true
-        }),
-        new PurifyCSSPlugin({
-            // Give paths to parse for rules. These should be absolute!
-            paths: glob.sync(path.join(__dirname, 'src/*.html')),
         })
     ]
 };

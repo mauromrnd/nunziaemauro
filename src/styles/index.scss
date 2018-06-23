@@ -20,7 +20,6 @@ $imgSposi: '../assets/img/sposi.png';
 $imgTestimoni: '../assets/img/testimoni.png';
 $imgSposiBG: '../assets/img/copertina_bg.png';
 $imgFooterPattern: '../assets/img/footer_pattern.png';
-
 body {
     scroll-behavior: smooth;
 }
@@ -52,6 +51,8 @@ body {
     font-family: 'mellony dry brush';
     color: $mainColor;
     font-size: 12vmin;
+    padding-left: 20px;
+    padding-right: 20px;
     z-index: 10;
 }
 
@@ -68,9 +69,18 @@ body {
     position: relative;
 }
 
+.intro{
+    padding-top: 100px;
+}
+
 .navbar-nav {
     margin-left: auto;
     margin-right: auto;
+}
+
+nav.navbar.sticky {
+    position: fixed !important;
+    top: 0 !important;
 }
 
 nav.navbar {
@@ -78,6 +88,9 @@ nav.navbar {
     text-align: center;
     z-index: 1000;
     text-align: center;
+    position: absolute;
+    top: 100vh;
+   
     .nav-item {
         margin-left: 15px;
         margin-right: 15px;
@@ -130,6 +143,25 @@ nav.navbar {
     background-repeat: no-repeat;
 }
 
+.clip {
+    /* if we can clip, do it */
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    /* what will show through the text
+        ~ or ~
+       what will be the background of that element */
+    background-image: url($imgSposiBG);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    /* fallback text color
+        ~ or ~
+       the actual color of text, so it better work on the background */
+}
+
 .copertina {
     z-index: 20;
     line-height: 10vmin;
@@ -139,22 +171,6 @@ nav.navbar {
     font-size: 20vmin;
     text-overflow: unset;
     overflow: visible;
-    /* if we can clip, do it */
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-    /* what will show through the text
-      ~ or ~
-     what will be the background of that element */
-    background-image: url($imgSposiBG);
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-    /* fallback text color
-      ~ or ~
-     the actual color of text, so it better work on the background */
     color: $mainColor;
 }
 
@@ -198,7 +214,6 @@ nav.navbar {
 }
 
 .container-img {
-    position: absolute;
     top: 0;
     z-index: 1;
     .sposi {
@@ -222,7 +237,7 @@ button {
     border: none;
     border-radius: 5px;
     color: white;
-    font-family : 'TheHandExtrablack';
+    font-family: 'TheHandExtrablack';
     font-size: 6vmin;
     padding-bottom: 15px;
     padding-left: 15px;
@@ -233,9 +248,13 @@ button {
     text-align: center;
 }
 
-footer.footer{
+footer.footer {
     background-image: url($imgFooterPattern);
     background-repeat: repeat;
     width: 100%;
     height: 200px;
+}
+
+.programma {
+    padding: 30px;
 }
