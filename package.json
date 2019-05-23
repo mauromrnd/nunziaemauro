@@ -26,7 +26,7 @@
         "openlayers": "^4.6.5",
         "popper.js": "^1.14.3",
         "rellax": "^1.6.2",
-        "scrollreveal": "^3.4.0",
+        "scrollreveal": "^4.0.5",
         "smooth-scroll": "^14.2.0"
     },
     "devDependencies": {
