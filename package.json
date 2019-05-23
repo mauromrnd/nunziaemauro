@@ -25,7 +25,7 @@
         "jquery": "^3.3.1",
         "openlayers": "^4.6.5",
         "popper.js": "^1.14.3",
-        "rellax": "^1.6.2",
+        "rellax": "^1.9.1",
         "scrollreveal": "^3.4.0",
         "smooth-scroll": "^14.2.0"
     },
