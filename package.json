@@ -30,7 +30,7 @@
         "smooth-scroll": "^14.2.0"
     },
     "devDependencies": {
-        "@types/openlayers": "^4.6.9",
+        "@types/openlayers": "^4.6.17",
         "@types/scrollreveal": "0.0.3",
         "clean-webpack-plugin": "^3.0.0",
         "css-loader": "^0.28.11",
