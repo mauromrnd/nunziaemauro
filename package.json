@@ -45,7 +45,7 @@
         "http-server": "^0.11.1",
         "node-sass": "^4.9.0",
         "normalize.css": "^8.0.0",
-        "optimize-css-assets-webpack-plugin": "^4.0.2",
+        "optimize-css-assets-webpack-plugin": "^5.0.1",
         "postcss-loader": "^2.1.5",
         "purify-css": "^1.2.5",
         "purifycss-webpack": "^0.7.0",
