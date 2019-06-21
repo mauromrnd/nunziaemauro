@@ -1,10 +1,12 @@
 language: node_js
-
+node_js:
+  - "12"
 install:
     - npm install
 script:
     - npm run build
 deploy:
+  local_dir: dist
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_API_KEY  # Set in the settings page of your repository, as a secure variable
