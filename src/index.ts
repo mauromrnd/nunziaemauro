@@ -1,7 +1,5 @@
 
-import 'normalize.css/normalize.css';
 
-import 'bootstrap/scss/bootstrap.scss';
 import './styles/index.scss';
 
 import 'jquery/dist/jquery.js';
@@ -12,6 +10,8 @@ import './ts/map.ts'
 import './ts/foto.ts'
 import './ts/navbar.ts'
 import './ts/programma.ts'
+
+import pin from './assets/img/pin.svg';
 
 import * as ScrollReveal from 'scrollreveal/dist/scrollreveal.js';
 import * as SmoothScroll from 'smooth-scroll/dist/smooth-scroll';

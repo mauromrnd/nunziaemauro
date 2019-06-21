@@ -1,12 +1,14 @@
+'use strict';
+
 const path = require('path');
-const glob = require('glob');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
-const CleanWebpackPlugin = require('clean-webpack-plugin'); //installed via npm
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const PurifyCSSPlugin = require('purifycss-webpack');
+const autoprefixer = require('autoprefixer');
+//const PurifyCSSPlugin = require('purifycss-webpack');
 
 
 const buildPath = path.resolve(__dirname, 'dist');
@@ -52,7 +54,14 @@ module.exports = {
             }),
         }, {
             test: /\.(woff|woff2|eot|ttf|svg)$/,
-            loader: 'url-loader?limit=100000'
+            use: [
+                {
+                    loader: 'url-loader',
+                    options: {
+                        limit: 1000, // if less than 10 kb, add base64 encoded image to css
+                        name: "assets/[hash].[ext]" // if more than 10 kb move to this folder in build using file-loader
+                    }
+                }]
         }, {
             // Load all images as base64 encoding if they are smaller than 8192 bytes
             test: /\.(png|jpg|gif)$/,
@@ -66,8 +75,8 @@ module.exports = {
         }]
     },
     plugins: [
-        new CleanWebpackPlugin(buildPath),
-        require('autoprefixer'),
+        new CleanWebpackPlugin(),
+        autoprefixer,
         new HtmlWebpackPlugin({
             template: './src/index.html',
             // Inject the js bundle at the end of the body of the given template
@@ -109,7 +118,7 @@ module.exports = {
         new OptimizeCssAssetsPlugin({
             cssProcessor: require('cssnano'),
             cssProcessorOptions: {
-                
+
                 discardComments: {
                     removeAll: true
                 }

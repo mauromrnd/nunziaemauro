@@ -1,5 +1,5 @@
 import pin from '../assets/img/pin.svg';
-import 'openlayers/dist/ol.css';
+
 import * as ol from 'openlayers';
 
 window.addEventListener('load', () => {
