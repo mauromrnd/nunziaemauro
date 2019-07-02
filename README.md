@@ -1,5 +1,7 @@
 # Nunzia e Mauro 
 
+[![Build Status](https://travis-ci.org/grandeemme/nunziaemauro.svg?branch=master)](https://travis-ci.org/grandeemme/nunziaemauro)
+
 ## Perché
 
 Questo sito nasce come partecipazione virtuale al nostro matrimonio
