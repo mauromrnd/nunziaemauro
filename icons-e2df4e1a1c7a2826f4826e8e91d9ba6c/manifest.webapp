@@ -1,0 +1,14 @@
+{
+  "version": "2.0.0",
+  "name": "nunzia-e-mauro",
+  "description": "",
+  "icons": {
+    "60": "/icons-e2df4e1a1c7a2826f4826e8e91d9ba6c/firefox_app_60x60.png",
+    "128": "/icons-e2df4e1a1c7a2826f4826e8e91d9ba6c/firefox_app_128x128.png",
+    "512": "/icons-e2df4e1a1c7a2826f4826e8e91d9ba6c/firefox_app_512x512.png"
+  },
+  "developer": {
+    "name": "Mauro Miranda",
+    "url": null
+  }
+}
