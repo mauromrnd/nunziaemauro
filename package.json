@@ -32,7 +32,7 @@
         "copy-webpack-plugin": "^5.0.4",
         "jquery": "^3.4.1",
         "openlayers": "^4.6.5",
-        "popper.js": "^1.15.0",
+        "popper.js": "^1.16.0",
         "rellax": "^1.10.0",
         "scrollreveal": "^4.0.5",
         "smooth-scroll": "^16.1.0"
