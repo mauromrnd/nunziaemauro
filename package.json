@@ -27,7 +27,7 @@
     ],
     "homepage": "",
     "dependencies": {
-        "autoprefixer": "^9.6.1",
+        "autoprefixer": "^9.7.3",
         "bootstrap": "^4.3.1",
         "copy-webpack-plugin": "^5.0.4",
         "jquery": "^3.4.1",
